@@ -41,8 +41,9 @@ Connect-MSolService
 Pull all the subscriptions you have access to then iterate through them, change Get-ARTAccess to whatever tool you want to run across the subscription.
 ```
 $enabledSubs = Get-AzSubscription |  Where-Object{$_.State -eq "Enabled"} | select Id
-foreach($SubName in $enabledSubs) {
-    Get-ARTAccess -SubscriptionID $SubName | Out-File '$SubName.txt'
+foreach ($SubName in $enabledSubs) {
+    $IDOut = $SubName.id
+    Get-ARTAccess -SubscriptionID $IDOut | Out-File "$IDOut.txt"
 }
 ```
 
