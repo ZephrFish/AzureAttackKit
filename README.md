@@ -19,7 +19,11 @@ Import-Module AzureAD
 ```
 
 Once the modules are installed you will need to connect an Azure account using the following three commands (if you're on Cloudshell use Connect-AzAccount -UseDeviceAuthentication): 
+## Setup:
+`. .\Setup.ps1`
+`Connect-ADandAZ`
 
+If the above fails run the following:
 ``` 
 Connect-AzAccount
 Connect-AzureAD
