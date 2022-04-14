@@ -35,4 +35,5 @@ Connect-MSolService
 - AzureHound
 - AzureRT
 - MicroBurst
+- AADInternals
 
