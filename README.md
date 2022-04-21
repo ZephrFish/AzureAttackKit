@@ -38,7 +38,7 @@ Connect-MSolService
 - AADInternals
 
 ## Quick Wins
-Pull all the subscriptions you have access to then iterate through them, change Get-ARTAccess to whatever tool you want to run across the subscription.
+Pull all the subscriptions you have access to then iterate through them, change Get-ARTAccess(Which uses AzureRT) to whatever tool you want to run across the subscription.
 ```
 $enabledSubs = Get-AzSubscription |  Where-Object{$_.State -eq "Enabled"} | select Id
 foreach ($SubName in $enabledSubs) {
