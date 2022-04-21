@@ -47,6 +47,16 @@ foreach ($SubName in $enabledSubs) {
 }
 ```
 
+Use PowerZure to pull runbook content for each sub:
+```
+$enabledSubs = Get-AzSubscription |  Where-Object{$_.State -eq "Enabled"} | select Id
+foreach ($SubName in $enabledSubs) {    
+    $IDOut = $SubName.id
+    Set-AzContext -Subscription "$IDOut"
+    Get-AzureRunbookContent -All
+}
+```
+
 ## Plan
 Build a snaffler-like tool for crawling storage accounts and using storage explorer to see what can be found
 
