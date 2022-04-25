@@ -56,7 +56,8 @@ foreach ($SubName in $enabledSubs) {
     Get-AzureRunbookContent -All
 }
 ```
-## Temlplates
+## Templates
+Template for connecting with clientID and information
 ```
 $tenantid = "TENANTID THIS WILL BE A GUID"
 $clientid = "GUID OF CLIENT" 
