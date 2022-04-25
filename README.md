@@ -59,11 +59,14 @@ foreach ($SubName in $enabledSubs) {
 ## Templates
 Template for connecting with clientID and information
 ```
-$tenantid = "TENANTID THIS WILL BE A GUID"
-$clientid = "GUID OF CLIENT" 
-$clientsecret = "SECRET"
+$tenantid = "<INSET TENANT ID>"
+$clientid = "<INSERT CLIENT ID/USERNAME>"
+$clientsecret = "<INSERT CLIENT SECRET/PASSWORD"
+$subscription = "<INSERT SUBCRIPTION>"
 $mycred = New-Object System.Management.Automation.PSCredential($clientid,(ConvertTo-SecureString $clientsecret -AsPlainText -Force))
-Connect-AzAccount -Credential $mycred -Tenant $tenantid -ServicePrincipal -SubscriptionName "SUBNAMEHERE"
+Connect-AzAccount -Credential $mycred -Tenant $tenantid -ServicePrincipal -Subscription $subscription
+# Below is if you need to also authenticate to Az as well
+az login --service-principal -u $clientid -p $clientsecret --tenant $tenantid
 ```
 
 
