@@ -56,6 +56,15 @@ foreach ($SubName in $enabledSubs) {
     Get-AzureRunbookContent -All
 }
 ```
+## Temlplates
+```
+$tenantid = "TENANTID THIS WILL BE A GUID"
+$clientid = "GUID OF CLIENT" 
+$clientsecret = "SECRET"
+$mycred = New-Object System.Management.Automation.PSCredential($clientid,(ConvertTo-SecureString $clientsecret -AsPlainText -Force))
+Connect-AzAccount -Credential $mycred -Tenant $tenantid -ServicePrincipal -SubscriptionName "SUBNAMEHERE"
+```
+
 
 ## Plan
 Build a snaffler-like tool for crawling storage accounts and using storage explorer to see what can be found
