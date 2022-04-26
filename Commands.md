@@ -4,14 +4,14 @@
 - Get-AzureVMExtensionSettings.ps1 (misc function)
 - Invoke-AzVMCommandREST (Rest function)
 	- needs mgmt token
-	- 
+	
 ## PowerZure
 ---------------
 - Set-AzureSubscription
 - Get-AzureUser -Username
 - Show-AzureCurrentUser
 - Invoke-AzureRunCommand
-- 
+
 ## AzureRT
 -------------------
 - Get-ARTWhoami
