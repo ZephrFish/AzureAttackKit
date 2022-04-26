@@ -56,6 +56,63 @@ foreach ($SubName in $enabledSubs) {
     Get-AzureRunbookContent -All
 }
 ```
+
+## Regexes for Searching Through Files
+```
+
+description = "Azure Service Principal Client Secret"
+regex = '''(?i)(secret|key|password)\s*:?=?\s*['\"][0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}['\"]'''
+[[rules]]
+description = "Azure DevOps Personal Access Token"
+regex = '''(?i)(pat|token)\s*:?=?\s*['\"]([a-z0-9]{52})['\"]'''
+[[rules]]
+description = "Azure Account Key"
+regex = '''(?i)(secret|key)\s*:?=?\s*['\"]([a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{88})['\"]'''
+tags = ["Azure Storage Account", "Azure Cosmos DB"]
+[[rules]]
+description = "Azure Storage Connection String"
+regex = '''DefaultEndpointsProtocol=https;AccountName=[a-z0-9]{3,24};AccountKey=[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{88};EndpointSuffix=.+'''
+[[rules]]
+description = "Azure Cosmos DB Connection String"
+regex = '''AccountEndpoint=https:\/\/.+:443\/;AccountKey=[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{88};'''
+[[rules]]
+description = "Generic Secret"
+regex = '''(?i)secret\s*:?=?\s*['\"][0-9a-zA-Z-_/]{8,40}['\"]'''
+# rules from trufflehog
+[[rules]]
+description = "Amazon MWS Auth Token"
+regex = '''amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'''
+[[rules]]
+description = "AWS AppSync GraphQL Key"
+regex = '''da2-[a-z0-9]{26}'''
+[[rules]]
+description = "Google OAuth"
+regex = '''[0-9]+-[0-9A-Za-z_]{32}\\.apps\\.googleusercontent\\.com'''
+tags = ["Cloud Platform", "Drive", "Gmail", "YouTube"]
+[[rules]]
+description = "Google API Key"
+regex = '''AIza[0-9A-Za-z\\-_]{35}'''
+tags = ["Cloud Platform", "Drive", "Gmail", "YouTube"]
+[[rules]]
+description = "Google OAuth Access Token"
+regex = '''ya29\\.[0-9A-Za-z\\-_]+'''
+[[rules]]
+description = "MailChimp API Key"
+regex = '''[0-9a-f]{32}-us[0-9]{1,2}'''
+[[rules]]
+description = "Mailgun API Key"
+regex = '''key-[0-9a-zA-Z]{32}'''
+[[rules]]
+description = "Square Access Token"
+regex = '''sq0atp-[0-9A-Za-z\\-_]{22}'''
+[[rules]]
+description = "Square OAuth Secret"
+regex = '''sq0csp-[0-9A-Za-z\\-_]{43}'''
+[[rules]]
+description = "Telegram Bot API Key"
+regex = '''[0-9]+:AA[0-9A-Za-z\\-_]{33}'''
+```
+
 ## Templates
 Template for connecting with clientID and information
 ```
