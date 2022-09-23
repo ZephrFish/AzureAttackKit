@@ -387,3 +387,5 @@ Function Connect-ARTAD {
         $ErrorActionPreference = $EA
     }
 }
+
+Connect-ADandAZ
