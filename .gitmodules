@@ -1,0 +1,14 @@
+[submodule "AzureHound"]
+	path = AzureHound
+	url = https://github.com/BloodHoundAD/AzureHound
+[submodule "AzureRT"]
+	path = AzureRT
+	url = https://github.com/mgeeky/AzureRT
+[submodule "MicroBurst"]
+	path = MicroBurst
+	url = https://github.com/NetSPI/MicroBurst
+[submodule "https://github.com/hausec/PowerZure"]
+	branch = cloudshell
+[submodule "PowerZure"]
+	path = PowerZure
+	url = https://github.com/hausec/PowerZure
