@@ -2,15 +2,21 @@
 # Authors: Andy Gill (@ZephrFish)
 
 # Setup Modules
-Install-Module Az -Force -Confirm -AllowClobber -Scope CurrentUser
-Install-Module AzureAD -Force -Confirm -AllowClobber -Scope CurrentUser
-Install-Module Microsoft.Graph -Force -Confirm -AllowClobber -Scope CurrentUser
-Install-Module MSOnline -Force -Confirm -AllowClobber -Scope CurrentUser       
-Install-Module AzureADPreview -Force -Confirm -AllowClobber -Scope CurrentUser 
-Install-Module AADInternals -Force -Confirm -AllowClobber -Scope CurrentUser   
+Install-Module Az -Force -Confirm:$false -AllowClobber -Scope CurrentUser
+Install-Module AzureAD -Force -Confirm:$false -AllowClobber -Scope CurrentUser
+Install-Module Microsoft.Graph -Force -Confirm:$false -AllowClobber -Scope CurrentUser
+Install-Module MSOnline -Force -Confirm:$false -AllowClobber -Scope CurrentUser       
+Install-Module AzureADPreview -Force -Confirm:$false -AllowClobber -Scope CurrentUser 
+Install-Module AADInternals -Force -Confirm:$false -AllowClobber -Scope CurrentUser   
 
+# Import all the modules
 Import-Module Az
 Import-Module AzureAD
+Import-Module AADInternals
+Import-Module .\MicroBurst-master\MicroBurst.psm1
+Import-Module .\AzureRT-master\AzureRT.ps1
+Import-Module .\PowerZure\PowerZure.psm1
+Import-Module AADInternals
 
 # Connect Accounts
 Function Connect-ADandAZ {
@@ -115,7 +121,7 @@ Function Connect-ART {
 
         if (-not (Get-Module -ListAvailable -Name Az.Accounts)) {
             Write-Verbose "Az Powershell module not installed or not loaded. Installing it..."
-            Install-Module -Name Az -Force -Confirm -Scope CurrentUser -AllowClobber
+            Install-Module -Name Az -Force -Confirm:$false -Scope CurrentUser -AllowClobber
         }
 
         if($PsCmdlet.ParameterSetName -eq "Token" -and ($AccessToken -eq $null -or $AccessToken -eq "")) {
@@ -319,7 +325,7 @@ Function Connect-ARTAD {
 
         if (-not (Get-Module -ListAvailable -Name AzureAD)) {
             Write-Verbose "AzureAD Powershell module not installed or not loaded. Installing it..."
-            Install-Module -Name AzureAD -Force -Confirm -Scope CurrentUser -AllowClobber
+            Install-Module -Name AzureAD -Force -Confirm:$false -Scope CurrentUser -AllowClobber
         }
 
         if($PsCmdlet.ParameterSetName -eq "Token" -and ($AccessToken -eq $null -or $AccessToken -eq "")) {

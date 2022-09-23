@@ -4,11 +4,13 @@
 [submodule "AzureRT"]
 	path = AzureRT
 	url = https://github.com/mgeeky/AzureRT
+[submodule "AADInternals"]
+	path = AADInternals
+	url = https://github.com/Gerenios/AADInternals
 [submodule "MicroBurst"]
 	path = MicroBurst
-	url = https://github.com/NetSPI/MicroBurst
-[submodule "https://github.com/hausec/PowerZure"]
-	branch = cloudshell
+	url = https://github.com/NetSPI/MicroBurst	
 [submodule "PowerZure"]
 	path = PowerZure
 	url = https://github.com/hausec/PowerZure
+	branch = cloudshell
