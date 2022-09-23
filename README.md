@@ -128,8 +128,7 @@ az login --service-principal -u $clientid -p $clientsecret --tenant $tenantid
 
 
 ## Plan
-Work in progress 
-Build a snaffler-like tool for crawling storage accounts and using storage explorer to see what can be found
-
-Extract the various powershell scripts used for pulling info via AzureRT, PowerZure & MicroBurst and build a tool for quick wins, similar to AutoPwn
-
+- Work in progress but I have started work on a snaffler-like tool for crawling storage accounts and using storage 
+explorer to see what can be found.
+- Extract the various powershell scripts used for pulling info via AzureRT, PowerZure & MicroBurst and build a tool 
+for quick wins, similar to AutoPwn
