@@ -12,6 +12,17 @@
 - Show-AzureCurrentUser
 - Invoke-AzureRunCommand
 
+## AADInternals 
+### Note for all IntRecon
+- Get-AADIntAccessTokenForAzureCoreManagement -SaveToCache
+- InvokeAADIntReconAsInsider
+- InvokeAADIntReconAsGuest
+
+```
+$results = Invoke-AADIntReconAsInsider
+$resultsGuest = InvokeAADIntReconAsGuest
+```
+
 ## AzureRT
 -------------------
 - Get-ARTWhoami

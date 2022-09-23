@@ -12,21 +12,26 @@ Note there is a zipped version of all the submodules if you need it quickly call
 Setup.ps1 contains the following lines to install the required modules to access azure and the various assocated modules. You may need to do `powershell -ep bypass` if scripts are disabled.
 
 ```
-Install-Module Az -Force -Confirm -AllowClobber -Scope CurrentUser
-Install-Module AzureAD -Force -Confirm -AllowClobber -Scope CurrentUser
-Install-Module Microsoft.Graph -Force -Confirm -AllowClobber -Scope CurrentUser
-Install-Module MSOnline -Force -Confirm -AllowClobber -Scope CurrentUser       
-Install-Module AzureADPreview -Force -Confirm -AllowClobber -Scope CurrentUser 
-Install-Module AADInternals -Force -Confirm -AllowClobber -Scope CurrentUser   
+Install-Module Az -Force -Confirm:$false -AllowClobber -Scope CurrentUser
+Install-Module AzureAD -Force -Confirm:$false -AllowClobber -Scope CurrentUser
+Install-Module Microsoft.Graph -Force -Confirm:$false -AllowClobber -Scope CurrentUser
+Install-Module MSOnline -Force -Confirm:$false -AllowClobber -Scope CurrentUser       
+Install-Module AzureADPreview -Force -Confirm:$false -AllowClobber -Scope CurrentUser 
+Install-Module AADInternals -Force -Confirm:$false -AllowClobber -Scope CurrentUser     
 
 Import-Module Az
 Import-Module AzureAD
+Import-Module AADInternals
+Import-Module .\MicroBurst-master\MicroBurst.psm1
+Import-Module .\AzureRT-master\AzureRT.ps1
+Import-Module .\PowerZure\PowerZure.psm1
+Import-Module AADInternals
 ```
 
 Once the modules are installed you will need to connect an Azure account using the following three commands (if you're on Cloudshell use Connect-AzAccount -UseDeviceAuthentication): 
-`. .\Setup.ps1`
+- `. .\Setup.ps1`
 
-`Connect-ADandAZ`
+- `Connect-ADandAZ`
 
 If the above fails run the following:
 ``` 
