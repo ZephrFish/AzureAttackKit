@@ -7,8 +7,10 @@ Git for Windows if you want to auto pull down the latest versions of everything 
 ## Cloning
 `git clone --recurse-submodules https://github.com/ZephrFish/AzureAttackKit`
 
+Note there is a zipped version of all the submodules if you need it quickly called `AZ-AttackKit.zip`.
 ## Setup
-Setup.ps1 contains the following lines to install the required modules to access azure and the various assocated modules. 
+Setup.ps1 contains the following lines to install the required modules to access azure and the various assocated modules. You may need to do `powershell -ep bypass` if scripts are disabled.
+
 ```
 Install-Module Az -Force -Confirm -AllowClobber -Scope CurrentUser
 Install-Module AzureAD -Force -Confirm -AllowClobber -Scope CurrentUser
@@ -22,8 +24,8 @@ Import-Module AzureAD
 ```
 
 Once the modules are installed you will need to connect an Azure account using the following three commands (if you're on Cloudshell use Connect-AzAccount -UseDeviceAuthentication): 
-## Setup:
 `. .\Setup.ps1`
+
 `Connect-ADandAZ`
 
 If the above fails run the following:
