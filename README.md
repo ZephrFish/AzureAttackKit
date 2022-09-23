@@ -4,6 +4,9 @@ Collection of Azure Tools to Pull down for Attacking an Env from a windows machi
 ## Pre-Requisites
 Git for Windows if you want to auto pull down the latest versions of everything via powershell.
 
+## Cloning
+`git clone --recurse-submodules https://github.com/ZephrFish/AzureAttackKit`
+
 ## Setup
 Setup.ps1 contains the following lines to install the required modules to access azure and the various assocated modules. 
 ```
