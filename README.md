@@ -68,6 +68,8 @@ foreach ($SubName in $enabledSubs) {
 }
 ```
 
+Refer to [Commands](https://github.com/ZephrFish/AzureAttackKit/blob/main/Commands.md) file for additonal quick wins.
+
 ## Regexes for Searching Through Files
 ```
 
