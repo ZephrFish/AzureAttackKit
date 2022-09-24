@@ -30,7 +30,7 @@ Import-Module .\PowerZure\PowerZure.psm1
 Import-Module AADInternals
 ```
 
-Once the modules are installed you will need to connect an Azure account using the following three commands (if you're on Cloudshell use Connect-AzAccount -UseDeviceAuthentication): 
+Once the modules are installed you will need to connect an Azure account using the following three commands (if you're on Cloudshell use `Connect-AzAccount -UseDeviceAuthentication`): 
 - `. .\Setup.ps1`
 
 - `Connect-ADandAZ`
@@ -69,7 +69,7 @@ foreach ($SubName in $enabledSubs) {
 }
 ```
 
-Refer to [Commands](https://github.com/ZephrFish/AzureAttackKit/blob/main/Commands.md) file for additonal quick wins.
+Refer to [Commands](https://github.com/ZephrFish/AzureAttackKit/blob/main/AAK/Commands.md) file for additonal quick wins. The [tools notes](https://github.com/ZephrFish/AzureAttackKit/blob/main/AAK/Tools.md) also has some useful tips on tools to check out in addition to those linked in this repo. 
 
 ## Regexes for Searching Through Files
 ```

@@ -393,5 +393,5 @@ Function Connect-ARTAD {
         $ErrorActionPreference = $EA
     }
 }
-
-Connect-ADandAZ
+# Uncomment below if you're NOT in CloudShell, follow the steps in README.md for cloudshell setup.
+# Connect-ADandAZ
